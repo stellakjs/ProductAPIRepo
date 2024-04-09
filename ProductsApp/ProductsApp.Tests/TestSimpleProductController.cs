@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web.Http;
 using System.Web.Http.Results;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ProductsApp.Models;
@@ -24,7 +23,6 @@ namespace ProductsApp.Tests
 
 
 
-
         [TestMethod]
         public void GetProduct_ShouldReturnCorrectProduct()
         {
@@ -36,9 +34,8 @@ namespace ProductsApp.Tests
             Assert.AreEqual(testProducts[3].Name, result.Content.Name);
         }
 
+
         [TestMethod]
-
-
         public void GetProduct_ShouldNotFindProduct()
         {
             var controller = new ProductsController(GetTestProducts());
@@ -54,9 +51,8 @@ namespace ProductsApp.Tests
                 new Product { Id = 2, Name = "Demo2", Price = 3.75M },
                 new Product { Id = 3, Name = "Demo3", Price = 16.99M },
                 new Product { Id = 4, Name = "Demo4", Price = 11.00M }
-                            };
+            };
             return testProducts;
         }
-
+        }
     }
-}
