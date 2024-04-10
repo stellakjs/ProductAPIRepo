@@ -20,19 +20,19 @@
 							"pm.test(\"value of [0].id to be 1\", () => {pm.expect(jsonData[0].Id).to.equal(1)});",
 							"pm.test(\"Value of [0].Name to be Tomato Soup\", () => {pm.expect(jsonData[0].Name).to.equal(\"Tomato Soup\")});",
 							"pm.test(\"Value of [0].Category ro be Groceries\", () => {pm.expect(jsonData[0].Category).to.equal(\"Groceries\")});",
-							"pm.test(\"Value of [0].Price ro be 1.0\", () => {pm.expect(jsonData[0].Price).to.equal(\"1.0\")});",
+							"pm.test(\"Value of [0].Price to be 1.0\", () => {pm.expect(jsonData[0].Price).to.equal(1.0)});",
 							"",
 							"//item 2",
 							"pm.test(\"value of [1].id to be 2\", () => {pm.expect(jsonData[1].Id).to.equal(2)});",
 							"pm.test(\"Value of [1].Name to be Yo-yo\", () => {pm.expect(jsonData[1].Name).to.equal(\"Yo-yo\")});",
 							"pm.test(\"Value of [1].Category ro be Toys\", () => {pm.expect(jsonData[1].Category).to.equal(\"Toys\")});",
-							"pm.test(\"Value of [1].Price ro be 3.75\", () => {pm.expect(jsonData[1].Price).to.equal(\"3.75\")});",
+							"pm.test(\"Value of [1].Price to be 3.75\", () => {pm.expect(jsonData[1].Price).to.equal(3.75)});",
 							"",
 							"//item 3",
 							"pm.test(\"value of [2].id to be 3\", () => {pm.expect(jsonData[2].Id).to.equal(3)});",
 							"pm.test(\"Value of [2].Name to be Hammer\", () => {pm.expect(jsonData[2].Name).to.equal(\"Hammer\")});",
 							"pm.test(\"Value of [2].Category ro be Hardware\", () => {pm.expect(jsonData[2].Category).to.equal(\"Hardware\")});",
-							"pm.test(\"Value of [2].Price ro be 16.99\", () => {pm.expect(jsonData[2].Price).to.equal(\"16.99\")});",
+							"pm.test(\"Value of [2].Price to be 16.99\", () => {pm.expect(jsonData[2].Price).to.equal(16.99)});",
 							"",
 							"",
 							"pm.test(\"response to be 200 OK\", () => {pm.response.to.have.status(200)});"
@@ -69,28 +69,12 @@
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
 							"//The Ids are returned in the previous endpoint which you just wrote tests for. Select one of the products and write 4 tests for each of the variables returned, and a response code test",
+							"pm.test(\"value of  id to be 1\", () => {pm.expect(jsonData.Id).to.equal(1)});",
+							"pm.test(\"Value of  Name to be Tomato Soup\", () => {pm.expect(jsonData .Name).to.equal(\"Tomato Soup\")});",
+							"pm.test(\"Value of  Category ro be Groceries\", () => {pm.expect(jsonData .Category).to.equal(\"Groceries\")});",
+							"pm.test(\"Value of  Price to be 1.0\", () => {pm.expect(jsonData.Price).to.equal(1.0)});",
 							"",
-							"pm.test(\"Value of Id is a integer\", () => {pm.expect(jsonData[0].Id).to.be.a(\"number\")});",
-							"pm.test(\"value of Id is not empty\", () => {pm.expect(jsonData[0].Id).to.not.be.empty});",
-							"pm.test(\"value of Id is 1\", () => {pm.expect(jsonData[0].Id).to.equal(1)});",
-							"pm.test(\"value of Id is not Null\", () => {pm.expect(jsonData[0].Id).to.be.not.null});",
-							"",
-							"pm.test(\"Value of Name is a Character\", () => {pm.expect(jsonData[0].Id).to.be.a(\"string\")});",
-							"pm.test(\"value of Name is not empty\", () => {pm.expect(jsonData[0].Id).to.not.be.empty});",
-							"pm.test(\"value of Name is Tomato soup\", () => {pm.expect(jsonData[0].Id).to.equal(\"Tomato Soup\")});",
-							"pm.test(\"value of Name is not Null\", () => {pm.expect(jsonData[0].Id).to.be.not.null});",
-							"",
-							"pm.test(\"Value of Category is a String\", () => {pm.expect(jsonData[0].Id).to.be.a(\"string\")});",
-							"pm.test(\"value of Category is not empty\", () => {pm.expect(jsonData[0].Id).to.not.be.empty});",
-							"pm.test(\"value of Category is Toys\", () => {pm.expect(jsonData[0].Id).to.equal(\"Toys\")});",
-							"pm.test(\"value of Category is not Null\", () => {pm.expect(jsonData[0].Id).to.be.not.null});",
-							"",
-							"pm.test(\"Value of Price is a integer\", () => {pm.expect(jsonData[0].Id).to.be.a(\"number\")});",
-							"pm.test(\"value of Price is not empty\", () => {pm.expect(jsonData[0].Id).to.not.be.empty});",
-							"pm.test(\"value of Price is 1.0\", () => {pm.expect(jsonData[0].Id).to.equal(1.0)});",
-							"pm.test(\"value of Price is not Null\", () => {pm.expect(jsonData[0].Id).to.be.not.null});",
-							"",
-							"",
+							" ",
 							"pm.test(\"response to be 200 OK\", () => {pm.response.to.have.status(200)});"
 						],
 						"type": "text/javascript",
@@ -102,7 +86,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44339/api/id",
+					"raw": "https://localhost:44339/api/products/1",
 					"protocol": "https",
 					"host": [
 						"localhost"
@@ -110,7 +94,8 @@
 					"port": "44339",
 					"path": [
 						"api",
-						"id"
+						"products",
+						"1"
 					]
 				}
 			},
